@@ -1,20 +1,109 @@
-$braid-purple: #382e7c;
-$braid-light-purple: #5949c1;
-$braid-blue: #248bcb;
-$braid-green: #48b9b2;
-//AAA compliant shade of green that contrasts enough against white
-$braid-green-accessible: #00645f;
-$braid-white: #ffffff;
+$white: #ffffff;
 
 $success-color: #b6e2b8;
 $error-color: #c62828;
 $info-color: #f9c976;
 
-$braid-grey-5: #585858;
-$braid-grey-4: #b3b3b3;
-$braid-grey-3: #dcdcdc;
-$braid-grey-2: #f0f0f0;
-$braid-grey-1: #f5f5f5;
-$braid-grey-0: #f9f9f9;
+$background-color-primary: var(--background-color-primary);
 
-$braid-font-color: #404040;
+// LIGHT THEME STYLING
+.app {
+  background: rgba(255, 255, 255, 0.8);
+  color: #222;
+
+  & svg {
+    & path {
+      fill: #222;
+    }
+  }
+
+  .btn {
+    background-color: #222;
+    p,
+    b {
+      color: rgba(229, 231, 235, 1);
+    }
+    & svg {
+      & path {
+        fill: rgba(229, 231, 235, 1);
+      }
+    }
+  }
+  .btn-reverse {
+    background-color: rgba(229, 231, 235, 1);
+    p,
+    b {
+      color: #222;
+    }
+    & svg {
+      & path {
+        fill: #222;
+      }
+    }
+  }
+
+  a,
+  p,
+  b,
+  h1,
+  h2,
+  h3 {
+    color: #222;
+
+    &.active {
+      color: #918aed;
+    }
+  }
+}
+
+// DARK THEME STYLING
+.dark-theme {
+  background: rgba(17, 24, 29, 0.6);
+  color: #ddd;
+
+  & svg {
+    & path {
+      fill: #ddd;
+    }
+  }
+
+  .btn {
+    background-color: #ddd;
+    p,
+    b {
+      color: rgba(30, 41, 59, 1);
+    }
+
+    & svg {
+      & path {
+        fill: rgba(30, 41, 59, 1);
+      }
+    }
+  }
+  .btn-reverse {
+    background-color: rgba(30, 41, 59, 1);
+    p,
+    b {
+      color: #ddd;
+    }
+
+    & svg {
+      & path {
+        fill: #ddd;
+      }
+    }
+  }
+
+  a,
+  p,
+  b,
+  h1,
+  h2,
+  h3 {
+    color: rgba(229, 231, 235, 1);
+
+    &.active {
+      color: #918aed;
+    }
+  }
+}

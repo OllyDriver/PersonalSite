@@ -1,0 +1,14 @@
+#app {
+  background-image: url('https://cdn.pixabay.com/photo/2022/04/22/17/22/waves-7150231_960_720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  backdrop-filter: blur(10px);
+  backdrop-filter: invert(80%);
+  backdrop-filter: sepia(90%);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

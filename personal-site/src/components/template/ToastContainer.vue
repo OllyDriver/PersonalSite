@@ -109,7 +109,7 @@ provide('createToast', createToast)
 
   .toast {
     position: absolute;
-    background-color: $braid-white;
+    background-color: $background-color-primary;
     top: 0;
     right: 0;
     z-index: 20;

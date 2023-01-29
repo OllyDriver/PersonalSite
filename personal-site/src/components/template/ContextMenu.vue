@@ -93,11 +93,11 @@ defineExpose({
   z-index: 9999;
   position: absolute;
 
-  background-color: $braid-white;
+  background-color: $background-color-primary;
   color: #000000;
 
   // border: 1px solid #000000;
-  box-shadow: 0 0 5px $braid-grey-3;
+  // box-shadow: 0 0 5px $braid-grey-3;
   border-radius: 2px;
 
   .btn {
@@ -110,9 +110,9 @@ defineExpose({
       background-color: #f6f6f6;
     }
 
-    &.btn + .btn {
-      border-top: 1px solid $braid-grey-3;
-    }
+    // &.btn + .btn {
+    //   border-top: 1px solid $braid-grey-3;
+    // }
 
     & :last-child {
       padding-left: 0.5rem;

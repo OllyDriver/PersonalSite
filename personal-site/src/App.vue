@@ -1,6 +1,14 @@
 <template>
-  <div v-if="loaded" :class="{ 'dark-theme': userTheme === 'dark-mode' }">
-    <Header></Header>
+  <div
+    v-if="loaded"
+    class="app"
+    :class="userTheme == 'dark-mode' ? 'dark-theme' : 'light-theme'"
+  >
+    <Header
+      :user-theme="userTheme"
+      :route-name="route.name"
+      @toggle-theme="toggleTheme"
+    ></Header>
     <main id="main" @click="dismissContextMenu">
       <ToastContainer>
         <ContextMenu ref="contextMenu">
@@ -10,7 +18,7 @@
         </ContextMenu>
       </ToastContainer>
     </main>
-    <Footer></Footer>
+    <Footer :route-name="route.name"></Footer>
   </div>
 </template>
 
@@ -37,15 +45,20 @@ const dismissContextMenu = () => {
   }
 }
 
+const toggleTheme = () => {
+  userTheme.value = userTheme.value == 'light-mode' ? 'dark-mode' : 'light-mode'
+}
+
 onMounted(() => {
   loaded.value = true
 })
 </script>
 
+<!-- STANDARD TEMPLATE SIZING AND LAYOUT -->
 <style lang="scss">
-#app {
+.app {
   min-height: 100vh;
-  min-width: 100%;
+  width: 100vw;
   overflow-x: hidden;
   margin: 0;
   column-gap: 0;
@@ -53,7 +66,7 @@ onMounted(() => {
 
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 3.2rem auto;
+  grid-template-rows: 4rem 1fr 4rem;
   grid-template-areas:
     ' header '
     ' main '
@@ -64,7 +77,19 @@ onMounted(() => {
   grid-area: header;
 }
 
+#main {
+  grid-area: main;
+  min-height: calc(100vh - 4rem);
+}
+
 #footer {
   grid-area: footer;
+}
+
+.cls-1 {
+  fill: none;
+  stroke: #9e75b2;
+  stroke-miterlimit: 10;
+  stroke-width: 7px;
 }
 </style>
